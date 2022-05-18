@@ -6,7 +6,15 @@
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint tempore aperiam labore expedita. In possimus beatae veniam labore ipsa similique, facere, nam corrupti quos voluptas sequi repellendus sint unde iusto.
 
             </p>
-            
+            {{ range . }}
+              <div class="alert alert-danger">
+                <h2>{{ .Title }}</h2>
+                <p>{{ .Anons }}</p>
+                <a href="/post/{{ .Id }}" class="btn btn-danger">Read more</a>
+              </div>
+            {{ else }}
+              <p>Now articles</p>
+            {{ end }}
            
             <p class="lead">
               <a href="#" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Learn more</a>
